@@ -1,0 +1,78 @@
+
+
+jsFidle Link:-https://jsfiddle.net/Abhishek123_Kumar/yuL76h2q/
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Regular Exp Compiler</title>
+	<style type="text/css">
+		body{
+			margin: 20px;
+		}
+		label{
+			font-weight: bold;
+		}
+		input{
+			width: 50%;
+			height: 30px;
+			background: whitesmoke;
+			border: 1px solid grey;
+		}
+		textarea{
+			width: 50%;
+			height: 500px;
+			color: black;
+			font-size: 30px;
+			font-weight: bold;
+			font-style: italic;
+			background: whitesmoke;
+			border: 1px solid grey;
+		}
+		.container{
+
+		}
+		input[type="text"] {
+  		color: red;
+  		background: lightgray;
+  			font-weight: bold;
+  			font-size: 20px;
+}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<label>Regular Expression</label><br>
+<input id="exp" type="text" oninput="myfunction()"><br><br>
+<label>Test String</label><br>
+<!-- <textarea id="demo" ></textarea> -->
+	<p id="demo" contenteditable="true" style="height: 100px;width: 200px;border:solid;">
+		
+	</p>
+	</div>
+<script type="text/javascript">
+	
+	function myfunction() 
+	{		
+		document.getElementById('demo').style.color="black";
+
+		var word=document.getElementById('demo').innerText;
+		var val=document.getElementById('exp').value;
+		if(val=="")
+		{
+				document.getElementById('demo').style.background="white";	
+		}
+		else{
+			var pattern= new RegExp(val);
+		if(pattern.test(word)){
+			document.getElementById('demo').style.color="blue";
+		}
+		
+		}
+		
+			
+}
+</script>
+</body>
+</html>
